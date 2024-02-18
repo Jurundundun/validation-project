@@ -1,6 +1,7 @@
 package com.example.validationproject.dto;
 
-import com.example.validationproject.dto.validationGoup.OnUpdate;
+import com.example.validationproject.anotation.validation.NullOrNotBlank;
+import com.example.validationproject.dto.validation_group.OnUpdate;
 import jakarta.validation.constraints.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,8 +19,7 @@ public class SampleDto {
     @Size(min = 2, message = "Firstname length must be at least 2 characters")
     private String firstname;
 
-    @Null(message = "Lastname must be null")
-    @Size(min = 1,message = "Lastname must not be blank for update group")
+    @NullOrNotBlank(message = "Lastname must be null or not blank")
     private String lastname;
 
     @NotNull(message = "Age must not be null")

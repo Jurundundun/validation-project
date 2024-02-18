@@ -1,7 +1,7 @@
 package com.example.validationproject.controller;
 
 import com.example.validationproject.dto.SampleDto;
-import com.example.validationproject.dto.validationGoup.OnUpdate;
+import com.example.validationproject.dto.validation_group.OnUpdate;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.*;
 @Validated
 public class SampleController {
 
-    @PostMapping()
+    @PostMapping
     public String createResource(@Validated @RequestBody SampleDto sampleDto) {
         return "Ok";
     }
 
-    @PutMapping()
+    @PutMapping
 
     public String updateResource(@Validated(OnUpdate.class) @RequestBody SampleDto sampleDto) {
         return "Ok";
